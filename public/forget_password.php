@@ -29,7 +29,7 @@ if(isset($_POST["recover"])) {
 		$mail->Subject = "ABC Jobs Password Recovery";
 		$mail->Body = "Please login with your new password: $newPassword";
 		$mail->AltBody = "Please login with your new password: $newPassword";
-		if(!$mail->send() {
+		if(!$mail->send()) {
 			echo "Mailer Error: " . $mail->ErrorInfo;
 		} else {
 			$UM->updatePassword($email, $newPassword);
